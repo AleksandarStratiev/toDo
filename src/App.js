@@ -24,7 +24,7 @@ function App() {
     Axios.post('http://localhost:3001/api/insert', {
       nameТask: nameТask, 
       colorStatus: colorStatus
-    }) 
+    })  
 
     setMovieList([
       ...movieReviewList, 
