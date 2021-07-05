@@ -17,7 +17,7 @@ function App() {
     Axios.get('http://localhost:3001/api/get').then((response) => {
       setMovieList(response.data)
     })
-  }, [])
+  }, []) 
 
   const submitReview = () => {
 
