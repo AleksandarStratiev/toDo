@@ -58,18 +58,18 @@ function App() {
         <label>Create Task:</label>
         <input type="text" name="nameТask" onChange={(e) => {setNameТask(e.target.value)}} />
         <label>Select color:</label>
-        <input type="radio" id="colorStatus" name="status" onChange={(e) => {setColorStatus(e.target.value)}} value="normal" />
+        <input type="radio" name="status" onChange={(e) => {setColorStatus(e.target.value)}} value="normal" />
         <label htmlFor="normal">normal</label>
-        <input type="radio" id="colorStatus" name="status" onChange={(e) => {setColorStatus(e.target.value)}} value="orange" />
+        <input type="radio" name="status" onChange={(e) => {setColorStatus(e.target.value)}} value="orange" />
         <label htmlFor="orange">orange</label>
-        <input type="radio" id="colorStatus" name="status" onChange={(e) => {setColorStatus(e.target.value)}} value="red" />
+        <input type="radio" name="status" onChange={(e) => {setColorStatus(e.target.value)}} value="red" />
         <label htmlFor="red">red</label>
 
         <button onClick={submitReview}>Submit</button>
 
         {movieReviewList.map((val) => {
           return (
-            <>
+            <div key={val.id} >
               <div className="carts">
                 <h1>{val.nameТask}</h1>
                 <p>Color: {val.colorStatus} </p>
@@ -84,22 +84,22 @@ function App() {
                     onChange={(e) => {setNewName(e.target.value)}}
                     type="text" placeholder="edit task" 
                   />
-                  <input type="radio" id="colorStatus" name="status" onChange={(e) => {setNewColor(e.target.value)}} value="normal" />
+                  <input type="radio" name="status" onChange={(e) => {setNewColor(e.target.value)}} value="normal" />
                   <label htmlFor="normal">normal</label>
-                  <input type="radio" id="colorStatus" name="status" onChange={(e) => {setNewColor(e.target.value)}} value="orange" />
+                  <input type="radio" name="status" onChange={(e) => {setNewColor(e.target.value)}} value="orange" />
                   <label htmlFor="orange">orange</label>
-                  <input type="radio" id="colorStatus" name="status" onChange={(e) => {setNewColor(e.target.value)}} value="red" />
+                  <input type="radio" name="status" onChange={(e) => {setNewColor(e.target.value)}} value="red" />
                   <label htmlFor="red">red</label>
                   </div>
-                <button 
-                  onClick={() => {editTask(val.nameТask)}} 
-                >
+                  <button 
+                    onClick={() => {editTask(val.nameТask)}} 
+                  >
                   edit task
                 </button>
                 </form>
               </div>
 
-            </>
+            </div>
           )
         })}
       </div>
